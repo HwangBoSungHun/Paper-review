@@ -27,4 +27,7 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
   <img src = "./img/srgan/loss3.jpg" width="50%"></center>
 
 - Advrsarial loss  
-<img src = "./img/srgan/loss4.PNG"></center>
+<img src = "./img/srgan/loss4.PNG"></center>  
+
+
+## 2. ESRGAN
