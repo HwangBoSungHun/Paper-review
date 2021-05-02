@@ -9,5 +9,16 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 
 ### Method
 #### (1) Architecture
-- GAN 사용
+- GAN
 ![CreatePlane](./img/srgan/architecture.PNG)
+#### (2) Loss function
+- Perceptual loss function
+![CreatePlane](./img/srgan/loss1.PNG)
+- Content loss
+이미지 자체(pixel)를 비교하던 기존 loss를 feature map을 비교하는 loss로 변경
+기존의 pixel-wise MSE loss
+![CreatePlane](./img/srgan/loss2.PNG)
+수정된 loss(Content loss)
+![CreatePlane](./img/srgan/loss3.jpg)
+- Advrsarial loss
+![CreatePlane](./img/srgan/loss4.PNG)
