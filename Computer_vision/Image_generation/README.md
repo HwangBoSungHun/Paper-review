@@ -9,7 +9,7 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 
 ### Method
 #### (1) Architecture
-- GAN
+- GAN  
 <img src = "./img/srgan/architecture.PNG" width="50%"></center>
 
 #### (2) Loss function
