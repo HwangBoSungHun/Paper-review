@@ -31,3 +31,10 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 
 
 ## 2. ESRGAN
+Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018). Esrgan: Enhanced super-resolution generative adversarial networks. In Proceedings of the European Conference on Computer Vision (ECCV) Workshops (pp. 0-0).
+
+### 요약
+- SRGAN에서 3가지 부분 개선
+  (1) Network structure  
+    Residual-in-Residual Dense Block(RDDB) 도입 &#8594; higher capacity & easier to train  
+    Batch Normalization(BN) 제거 & Residual scaling 도입  
