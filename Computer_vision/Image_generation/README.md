@@ -10,8 +10,8 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 ### Method
 #### (1) Architecture
 - GAN
-![CreatePlane](./img/srgan/architecture.PNG)
 <img src = "./img/srgan/architecture.PNG" width="50%">
+
 #### (2) Loss function
 - Perceptual loss function  
 ![CreatePlane](./img/srgan/loss1.PNG)
@@ -20,7 +20,7 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 기존의 pixel-wise MSE loss  
 ![CreatePlane](./img/srgan/loss2.PNG)  
 수정된 loss(Content loss)  
-![CreatePlane](./img/srgan/loss3.jpg)
 <img src = "./img/srgan/loss3.jpg" width="50%">
+
 - Advrsarial loss  
 ![CreatePlane](./img/srgan/loss4.PNG)
