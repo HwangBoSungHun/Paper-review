@@ -10,4 +10,4 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 ### Method
 #### (1) Architecture
 - GAN 사용
-- 
+![CreatePlane](./img/srgan/architecture.png)
