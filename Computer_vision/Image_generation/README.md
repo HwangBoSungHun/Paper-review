@@ -17,7 +17,9 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 <img src = "./img/srgan/loss1.PNG"></center>
 
 - Content loss  
+
   이미지 자체(pixel)를 비교하던 기존 loss를 feature map을 비교하는 loss로 변경  
+  
   기존의 pixel-wise MSE loss  
   <img src = "./img/srgan/loss2.PNG"></center>
 
