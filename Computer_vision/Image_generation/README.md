@@ -63,4 +63,4 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 <img src = "./img/esrgan/L_G.PNG" width="20%"></center>  
   __L<sub>1</sub> loss__  
 <img src = "./img/esrgan/L_1.PNG" width="20%"></center>  
-  L<sub>G</sub>는 전체 Generator의 loss이며 L<sub>percep</sub>
+  L<sub>G</sub>는 전체 Generator의 loss이며 L<sub>percep</sub>와 L<sub>G</sub><sup>Ra</sup>로 이루어짐
