@@ -63,3 +63,4 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 <img src = "./img/esrgan/L_G.PNG" width="20%"></center>  
   __L_1 loss__  
 <img src = "./img/esrgan/L_1.PNG" width="20%"></center>  
+  L_G는 전체 Generator의 loss이며 L~percep
