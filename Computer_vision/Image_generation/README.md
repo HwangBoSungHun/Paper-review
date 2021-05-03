@@ -47,12 +47,12 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 
 #### (2) Discriminator  
 - Relativistic GAN(RaGAN) 사용: 기존 GAN의 Discriminator는 real인지 fake인지 판단하는 이진 분류였다면 RaGAN의 Discriminator는 한 이미지가 다른 이미지보다 더 실제 같은지를 판단 &#8594; more realistic texture details  
-  __Standard Discriminator & Relativistic Discriminator__
+  __Standard Discriminator & Relativistic Discriminator__  
 <img src = "./img/esrgan/discriminator.PNG" width="50%"></center>  
-  __Discriminator loss__
+  __Discriminator loss__  
 <img src = "./img/esrgan/discriminator_loss.PNG" width="50%"></center>  
-  __Generator loss__
+  __Generator loss__  
 <img src = "./img/esrgan/generator_loss.PNG" width="50%"></center>  
-<img src = "./img/esrgan/E.PNG" width="50%"></center>  
+<img src = "./img/esrgan/E.PNG" width="10%"></center>  
 #### (3) Perceptual loss 개선  
 - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
