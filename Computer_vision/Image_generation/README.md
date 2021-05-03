@@ -58,7 +58,7 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 #### (3) Perceptual loss 개선  
 - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
 - activation을 취한 feature는 Sparse해진다는 문제 존재(특히 Very deep network일 경우 더욱 심함) &#8594; weak supervision & inferior performance  
-<img src = "./img/esrgan/feature_map.PNG" width="20%"></center>  
+<img src = "./img/esrgan/feature_map.PNG" width="60%"></center>  
   __Total loss for the Generator__  
 <img src = "./img/esrgan/L_G.PNG" width="20%"></center>  
   __L_1 loss__  
