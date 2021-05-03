@@ -70,3 +70,5 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 - 두 모델(G<sub>PSNR</sub>, G<sub>GAN</sub>)을 보간하여 G<sub>INTERP</sub> 모델 도출  
 <img src = "./img/esrgan/network_interpolation.PNG" width="40%"></center>  
 
+### 적용 결과  
+<img src = "./img/esrgan/comparison.PNG" width="50%"></center>  
