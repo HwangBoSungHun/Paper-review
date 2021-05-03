@@ -53,6 +53,6 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 <img src = "./img/esrgan/discriminator_loss.PNG" width="50%"></center>  
   __Generator loss__  
 <img src = "./img/esrgan/generator_loss.PNG" width="50%"></center>  
-<img src = "./img/esrgan/E.PNG" width="10%"></center>  
+<img src = "./img/esrgan/E.PNG" width="3%"></center>는 실제 데이터(X_r) 한 개에 대해 생성된 이미지(X_f)는 여러 개이므로, 모든 mini-batch의 fake data에 대해 average 취함  
 #### (3) Perceptual loss 개선  
 - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
