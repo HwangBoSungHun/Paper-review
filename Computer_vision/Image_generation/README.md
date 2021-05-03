@@ -34,13 +34,15 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018). Esrgan: Enhanced super-resolution generative adversarial networks. In Proceedings of the European Conference on Computer Vision (ECCV) Workshops (pp. 0-0).
 
 ### 요약
-- SRGAN에서 3가지 부분 개선  
-  (1) Network structure  
-  - Residual-in-Residual Dense Block(RDDB) 도입 &#8594; higher capacity & easier to train  
-  - Batch Normalization(BN) 제거 & Residual scaling 도입  
+- SRGAN에서 3가지 부분(Architecture, Discriminator, Perceptual loss) 개선  
 
-  (2) Discriminator  
-  - Relativistic GAN(RaGAN) 사용: 기존 GAN의 Discriminator는 real인지 fake인지 판단하는 이진 분류였다면 RaGAN의 Discriminator는 한 이미지가 다른 이미지보다 더 실제 같은지를 판단 &#8594; more realistic texture details
+### Method  
+#### (1) Architecture  
+- Residual-in-Residual Dense Block(RDDB) 도입 &#8594; higher capacity & easier to train  
+- Batch Normalization(BN) 제거 & Residual scaling 도입  
 
-  (3) Perceptual loss 개선
-  - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results
+#### (2) Discriminator  
+- Relativistic GAN(RaGAN) 사용: 기존 GAN의 Discriminator는 real인지 fake인지 판단하는 이진 분류였다면 RaGAN의 Discriminator는 한 이미지가 다른 이미지보다 더 실제 같은지를 판단 &#8594; more realistic texture details  
+
+#### (3) Perceptual loss 개선  
+- activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
