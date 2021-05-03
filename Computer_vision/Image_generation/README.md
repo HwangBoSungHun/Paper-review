@@ -20,10 +20,10 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 
   이미지 자체(pixel)를 비교하던 기존 loss를 feature map을 비교하는 loss로 변경  
   
-  기존의 pixel-wise MSE loss  
+  __기존의 pixel-wise MSE loss__  
   <img src = "./img/srgan/loss2.PNG"></center>
 
-  수정된 loss(Content loss)  
+  __수정된 loss(Content loss)__  
   <img src = "./img/srgan/loss3.jpg" width="50%"></center>
 
 - Advrsarial loss  
@@ -47,6 +47,12 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 
 #### (2) Discriminator  
 - Relativistic GAN(RaGAN) 사용: 기존 GAN의 Discriminator는 real인지 fake인지 판단하는 이진 분류였다면 RaGAN의 Discriminator는 한 이미지가 다른 이미지보다 더 실제 같은지를 판단 &#8594; more realistic texture details  
-
+  __Standard Discriminator & Relativistic Discriminator__
+<img src = "./img/esrgan/discriminator.PNG" width="50%"></center>  
+  __Discriminator loss__
+<img src = "./img/esrgan/discriminator_loss.PNG" width="50%"></center>  
+  __Generator loss__
+<img src = "./img/esrgan/generator_loss.PNG" width="50%"></center>  
+<img src = "./img/esrgan/E.PNG" width="50%"></center>  
 #### (3) Perceptual loss 개선  
 - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
