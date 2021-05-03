@@ -57,3 +57,7 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
   SRGAN에서는 Generator loss가 생성된 이미지에 대해서만 영향을 받지만 ESRGAN에서는 실제 데이터와 생성된 데이터 모두로부터 영향 받음  
 #### (3) Perceptual loss 개선  
 - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
+  __Total loss for the Generator__
+<img src = "./img/esrgan/L_G.PNG" width="50%"></center>  
+  __L_1 loss__
+<img src = "./img/esrgan/L_1.PNG" width="50%"></center>  
