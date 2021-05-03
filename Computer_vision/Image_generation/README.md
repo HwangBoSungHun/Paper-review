@@ -68,5 +68,5 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 #### (4) Network Interpolation  
 - G<sub>PSNR</sub>(PSNR-oriented network) 학습 &#8594; fine-tuning해서 G<sub>GAN</sub>(GAN-based network) 학습
 - 두 모델(G<sub>PSNR</sub>, G<sub>GAN</sub>)을 보간하여 G<sub>INTERP</sub> 모델 도출  
-<img src = "./img/esrgan/network_interpolation.PNG" width="20%"></center>  
+<img src = "./img/esrgan/network_interpolation.PNG" width="40%"></center>  
 
