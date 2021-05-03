@@ -63,5 +63,5 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 <img src = "./img/esrgan/L_G.PNG" width="20%"></center>  
   __L<sub>1</sub> loss(Content loss)__  
 <img src = "./img/esrgan/L_1.PNG" width="20%"></center>  
-  L<sub>G</sub>는 Total Generator loss이며 L<sub>percep</sub>와 L<sub>G</sub><sup>Ra</sup>(Relativistic Discriminator에서의 Generator loss), L<sub>1</sub>로 이루어짐
+  L<sub>G</sub>는 Total Generator loss이며 L<sub>percep</sub>와 L<sub>G</sub><sup>Ra</sup>(Relativistic Discriminator에서의 Generator loss), L<sub>1</sub>로 이루어짐  
   L<sub>1</sub>은 content loss로 G(x<sub>i</sub>)와 ground-truth y와의 1-norm distance에 해당함
