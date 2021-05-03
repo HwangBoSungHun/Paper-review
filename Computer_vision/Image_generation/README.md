@@ -64,4 +64,8 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
   __L<sub>1</sub> loss(Content loss)__  
 <img src = "./img/esrgan/L_1.PNG" width="20%"></center>  
   L<sub>G</sub>는 Total Generator loss이며 L<sub>percep</sub>와 L<sub>G</sub><sup>Ra</sup>(Relativistic Discriminator에서의 Generator loss), L<sub>1</sub>로 이루어짐  
-  L<sub>1</sub>은 content loss로 G(x<sub>i</sub>)와 ground-truth y와의 1-norm distance에 해당함
+  L<sub>1</sub>은 content loss로 G(x<sub>i</sub>)와 ground-truth y와의 1-norm distance에 해당함  
+#### (4) Network Interpolation  
+- G<sub>PSNR</sub>(PSNR-oriented network) 학습 &#8594; fine-tuning해서 G<sub>GAN</sub>(GAN-based network) 학습
+- 두 모델(G<sub>PSNR</sub>, G<sub>GAN</sub>)을 보간하여 G<sub>INTERP</sub> 모델 도출
+<img src = "./img/esrgan/network_interpolation.PNG" width="20%"></center>
