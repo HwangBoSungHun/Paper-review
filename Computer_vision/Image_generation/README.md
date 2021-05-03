@@ -38,8 +38,10 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 
 ### Method  
 #### (1) Architecture  
-- Residual-in-Residual Dense Block(RDDB) 도입 &#8594; higher capacity & easier to train  
 - Batch Normalization(BN) 제거 & Residual scaling 도입  
+- Residual-in-Residual Dense Block(RDDB) 도입 &#8594; higher capacity & easier to train  
+<img src = "./img/esrgan/architecture1.PNG" width="50%"></center>  
+<img src = "./img/esrgan/architecture2.PNG" width="50%"></center>  
 
 #### (2) Discriminator  
 - Relativistic GAN(RaGAN) 사용: 기존 GAN의 Discriminator는 real인지 fake인지 판단하는 이진 분류였다면 RaGAN의 Discriminator는 한 이미지가 다른 이미지보다 더 실제 같은지를 판단 &#8594; more realistic texture details  
