@@ -53,7 +53,7 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 <img src = "./img/esrgan/discriminator_loss.PNG" width="50%"></center>  
   __Generator loss__  
 <img src = "./img/esrgan/generator_loss.PNG" width="50%"></center>  
-<img src = "./img/esrgan/E.PNG" width="3%"></center>는 실제 데이터(X_r) 한 개에 대해 생성된 이미지(X_f)는 여러 개이므로, 모든 mini-batch의 fake data에 대해 average 취함  
+<img src = "./img/esrgan/E.PNG" width="3%"></center>는 실제 데이터(X<sub>r) 한 개에 대해 생성된 이미지(X<sub>f)는 여러 개이므로, 모든 mini-batch의 fake data에 대해 average 취함  
   SRGAN에서는 Generator loss가 생성된 이미지에 대해서만 영향을 받지만 ESRGAN에서는 실제 데이터와 생성된 데이터 모두로부터 영향 받음  
 #### (3) Perceptual loss 개선  
 - activation 이전의 VGG feature 사용(SRGAN에서는 activation 이후의 feature 사용) &#8594; sharper edges & more visually pleasing results  
@@ -61,6 +61,6 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 <img src = "./img/esrgan/feature_map.PNG" width="60%"></center>  
   __Total loss for the Generator__  
 <img src = "./img/esrgan/L_G.PNG" width="20%"></center>  
-  __L_1 loss__  
+  __L<sub>1 loss__  
 <img src = "./img/esrgan/L_1.PNG" width="20%"></center>  
-  L_G는 전체 Generator의 loss이며 L<sub>percep
+  L<sub>G는 전체 Generator의 loss이며 L<sub>percep
