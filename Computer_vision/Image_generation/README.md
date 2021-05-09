@@ -87,3 +87,10 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
 ### Method  
 #### (1) Architecture  
 <img src = "./img/iSeeBetter/architecture1.jpg"></center>  
+- RBPN(Generator) = SISR(Single Image Super Resolution) + MISR(Multi Image Super Resolution)  
+  - SISR: LR<sub>t</sub>의 사이즈를 키우는 역할
+  - MISR
+    - 이전 시점의 이미지와의 차이를 계산하여 변화된 정도를 반영.  
+    - Projection Module은 Upscale Projection과 Down Projection으로 구성  
+    - Upscale Projection: 이전 시점과 현재 시점의 차이를 기반으로 encoding하여 H<sub>t-l</sub> 생성  
+    - Downscale Projection: Upscale Projection의 output인 H<sub>t-l</sub>을 입력으로 받아서 decoding하여 L<sub>t-l</sub> 생성
