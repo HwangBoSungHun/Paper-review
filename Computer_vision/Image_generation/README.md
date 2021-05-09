@@ -90,14 +90,14 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
 - RBPN(Generator) = SISR(Single Image Super Resolution) + MISR(Multi Image Super Resolution)  
   - SISR(Fig. 3)    
     - LR<sub>t</sub>의 사이즈를 키우는 역할  
-    <img src = "./img/iSeeBetter/SISR.PNG" width="50%"></center> 
+    <img src = "./img/iSeeBetter/SISR.PNG" width="70%"></center> 
   - MISR(Fig. 4)
     - 이전 시점의 이미지와의 차이를 계산하여 변화된 정도를 반영.  
     - Projection Module은 Upscale Projection과 Down Projection으로 구성  
     - Upscale Projection: 이전 시점과 현재 시점의 차이를 기반으로 encoding하여 H<sub>t-l</sub> 생성  
     - Downscale Projection: Upscale Projection의 output인 H<sub>t-l</sub>을 입력으로 받아서 decoding하여 L<sub>t-l</sub> 생성  
-    <img src = "./img/iSeeBetter/MISR.PNG" width="50%"></center>
+    <img src = "./img/iSeeBetter/MISR.PNG" width="70%"></center>
 - SRGAN(Discriminator, Fig. 5)  
   - SRGAN에서 사용한 Discriminator를 사용함  
   - 일반적인 GAN에서 사용하는 Discriminator와 동일(이진 분류)  
-  <img src = "./img/iSeeBetter/Discriminator.PNG" width="50%"></center>
+  <img src = "./img/iSeeBetter/Discriminator.PNG" width="70%"></center>
