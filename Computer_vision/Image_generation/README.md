@@ -100,4 +100,24 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
 - SRGAN(Discriminator, Fig. 5)  
   - SRGAN에서 사용한 Discriminator를 사용함  
   - 일반적인 GAN에서 사용하는 Discriminator와 동일(이진 분류)  
-  <img src = "./img/iSeeBetter/Discriminator.PNG" width="70%"></center>
+  <img src = "./img/iSeeBetter/Discriminator.PNG" width="70%"></center>  
+#### (2) Loss function  
+- Generator loss  
+<img src = "./img/iSeeBetter/generator_loss.PNG" width="50%"></center>  
+  - MSE loss
+    - Pixel wise(PSNR과 SSIM 최적화하기에 좋음), 디테일을 못 잡는다는 문제 존재(Overly-smooth)  
+    <img src = "./img/iSeeBetter/mse_loss.PNG" width="50%"></center>  
+  - Perceptual loss
+    - SRGAN의 Perceptual loss와 동일
+    - HR과 SR에 대해 VGG-19의 중간 feature map(after activation, before maxpooling layer) 간의 차이로 구성됨  
+    <img src = "./img/iSeeBetter/perceptual_loss.PNG" width="50%"></center>  
+  - Adversarial loss(G 학습에 사용)  
+    - D가 생성된 이미지에 대해 진짜라고 예측하게끔 G 학습 시킴
+    <img src = "./img/iSeeBetter/adversarial_loss.PNG" width="50%"></center>  
+  - Total-Variation loss(TV loss)  
+    - 이웃한 픽셀과의 차이로 구성됨
+    - noise를 줄이기 위한 목적
+    <img src = "./img/iSeeBetter/TV_loss.PNG" width="50%"></center>  
+- Discriminator loss  
+  - 실제 이미지는 예측 확률 높게, 생성된 이미지는 예측 확률 낮게 예측하도록 구성
+  <img src = "./img/iSeeBetter/discriminator_loss.PNG" width="50%"></center>  
