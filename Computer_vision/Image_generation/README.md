@@ -122,4 +122,4 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
   - 실제 이미지는 예측 확률 높게, 생성된 이미지는 예측 확률 낮게 예측하도록 구성  
   <img src = "./img/iSeeBetter/discriminator_loss.PNG" width="50%"></center>  
 - 전체 frame(복수의 이미지)에 대한 loss는 아래와 같이 평균을 취하여 구함(위의 loss는 단일 이미지에 대한 것)  
-<img src = "./img/iSeeBetter/avg_loss.PNG" width="50%"></center>  
+<img src = "./img/iSeeBetter/avg_loss.PNG" width="40%"></center>  
