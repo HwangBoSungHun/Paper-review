@@ -86,4 +86,4 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
 
 ### Method  
 #### (1) Architecture  
-<img src = "./img/iSeeBetter/architecture1.jpg" width="50%"></center>  
+<img src = "./img/iSeeBetter/architecture1.jpg"></center>  
