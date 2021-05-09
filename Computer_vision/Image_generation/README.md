@@ -83,3 +83,7 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
   - Generator: Recurrent back-projection networks(RBPNs) &#8594; 현재 및 인접 프레임에 대한 공간 및 시간 정보 추출  
   - Discriminator: SRGAN &#8594; 기존 알고리즘에서 볼 수 있는 artifact를 제거하면서 SR 이미지의 자연스러움(Naturality) 개선  
   - Four-fold loss function: MSE, Perceptual, adversarial, total-variation(TV) &#8594; 이미지의 미세한 세부 사항을 잘 포착  
+
+### Method  
+#### (1) Architecture  
+<img src = "./img/iSeeBetter/architecture1.jpg" width="50%"></center>  
