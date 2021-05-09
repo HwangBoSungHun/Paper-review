@@ -72,3 +72,14 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 
 ### 적용 결과  
 <img src = "./img/esrgan/comparison.PNG" width="50%"></center>  
+
+## 3. iSeeBetter
+Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video super-resolution using recurrent generative back-projection networks. Computational Visual Media, 6(3), 307-317.  
+
+### 요약  
+- 영상에서 현재 및 인접 프레임에 대한 공간 및 시간 정보 추출 &#8594; Video Super Resolution(VSR)  
+- 기존 SR 알고리즘은 단일 이미지에 대해서 SR을 적용(SISR, Sigle-Image Super Resolution) &#8594; 영상에 적용할 경우 시간적 일관성이 부족(Lack of temporal coherency)  
+- 세 가지 측면에서 Novelty  
+  Generator: Recurrent back-projection networks &#8594; 현재 및 인접 프레임에 대한 공간 및 시간 정보 추출  
+  Discriminator: SRGAN &#8594; 기존 알고리즘에서 볼 수 있는 artifact를 제거하면서 SR 이미지의 자연스러움(Naturality) 개선  
+  Four-fold loss function: MSE, Perceptual, adversarial, total-variation(TV) &#8594; 이미지의 미세한 세부 사항을 잘 포착  
