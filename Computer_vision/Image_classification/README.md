@@ -8,4 +8,13 @@ Hu, J., Shen, L., & Sun, G. (2018). Squeeze-and-excitation networks. In Proceedi
 
 ### 모델 설명  
 상당히 간단하므로 그림으로 설명  
-<img src = "./img/SENet/SE_block.PNG" width="50%"></center>  
+<img src = "./img/SENet/SE_block.PNG" width="100%"></center>  
+- F<sub>tr</sub>은 Convolutional layer라고 생각하면 됨 &#8594; F<sub>tr</sub> 연산의 결과 Channel이 C인 Feature map U가 생김
+- F<sub>sq</sub>는 Channel 별로 Global average pooling하는 연산 &#8594; F<sub>sq</sub> 연산의 결과 Channel 별로 하나의 실수가 나오므로 결과적으로 길이가 C인 벡터가 나옴  
+- F<sub>ex</sub>는 [FC &#8594; ReLU &#8594; FC &#8594; Sigmoid 연산] &#8594; 연산의 결과 Channel 별로 0 ~ 1 값을 갖는 길이가 C인 벡터(s)가 됨  
+  <img src = "./img/SENet/s.PNG" width="50%"></center>  
+- 위의 결과를 U에 대해 Channel 별로 Weighted sum하면 최종 output이 됨  
+  <img src = "./img/SENet/x.PNG" width="50%"></center>  
+
+### 다른 모델에 적용한 결과
+<img src = "./img/SENet/application.PNG" width="100%"></center>  
