@@ -1,6 +1,6 @@
 # Paper-review
 
-매주 토요일 한 편의 논문을 리뷰하겠습니다.
+~~매주 토요일 한 편의~~. 틈틈이 논문 리뷰하겠습니다.
 
 첫 결심한 날은 2021년 3월 24일인데 열심히 해보겠습니다.
 
@@ -8,7 +8,8 @@
 
 ### Computer vision
 #### Image classification
-1. ResNeST
+1. __Squeeze-and-Excitation Networks (SENet)__  
+Hu, J., Shen, L., & Sun, G. (2018). Squeeze-and-excitation networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7132-7141).
 
 
 #### Super Resolution
