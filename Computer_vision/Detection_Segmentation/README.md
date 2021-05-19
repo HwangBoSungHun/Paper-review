@@ -12,7 +12,7 @@ Cai, Z., & Vasconcelos, N. (2019). Cascade R-CNN: high quality object detection 
   <img src = "./img/CascadeRCNN/architecture.png" width="100%"></center>  
 - Figure 3. (d)에 해당하는 그림이 Cascade R-CNN의 구조
 - (b)는 head가 H1으로 동일(공유)하지만 (d)는 H1, H2, H3로 세 개의 head가 학습됨  
-- Figure 1. (c)에서 확인한 것처럼 Input IoU보다 Output IoU가 높기 때문에 B1보다는 B2의 IoU가 더 높다고 생각하고 Cascade 구조 사용  
+- Figure 1. (c)에서 확인한 것처럼 Input IoU보다 Output IoU가 높기 때문에 B1보다는 B2의 IoU가 더 높기 때문에 학습이 순차적으로 진행될수록(B1 &#8594; B2 &#8594; B3) 성능 향상  
 ## 2. Mask R-CNN
 He, K., Gkioxari, G., Dollár, P., & Girshick, R. (2017). Mask r-cnn. In Proceedings of the IEEE international conference on computer vision (pp. 2961-2969).  
 ## 3. YOLO
