@@ -44,24 +44,24 @@ Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once:
   - 데이터는 Pascal voc 2007과 2012를 사용했으며 총 135 epoch동안 학습, Overfitting을 피하기 위해 Dropout과 Data augmentation을 사용  
 
 #### Total loss  
-<img src = "./img/YOLO/v1_total_loss.PNG" width="100%"></center>  
+<img src = "./img/YOLO/v1_total_loss.PNG" width="70%"></center>  
 
 #### (1) Localization loss
-<img src = "./img/YOLO/v1_localization_loss.PNG" width="100%"></center>  
+<img src = "./img/YOLO/v1_localization_loss.PNG" width="70%"></center>  
 - BBox의 위치에 대한 Loss
 - x, y는 BBox의 좌표, w, h는 가로, 세로 길이(W와 h에 Root를 취한 것은 큰 Box의 작은 편차가 작은 Box의 편차보다 덜 중요하다기 때문)
 - 1<sup>obj</sup>로 box가 존재한다고 예측할 때만 이 Loss를 더해줌
 - 람다를 통해 Localization loss의 가중치를 조절
 
 #### (2) Confidence loss  
-<img src = "./img/YOLO/v1_confidence_loss.PNG" width="100%"></center>  
+<img src = "./img/YOLO/v1_confidence_loss.PNG" width="70%"></center>  
 - 물체의 존재유무 평가  
 - Confidence loss는 두 부분으로 나눌 수 있는데, 첫번째는 물체가 있다고 예측될 때, 두번째는 물체가 없다고 예측될 때
 - C<sub>i</sub> hat의 경우 YOLO가 예측한 Box confidence score, C<sub>i</sub>는 실제 값. 따라서 C<sub>i</sub>는 실제로 해당 Cell에 물체가 존재하면 1, 존재하지 않으면 0
 - 람다<sub>noobj</sub>는 물체가 없을 때의 효과를 줄여주기 위해 0.5를 곱함(물체가 없는 경우가 상대적으로 더 많기 때문에, 없을 때의 Loss가 많음)
 
 #### (3) Classification loss  
-<img src = "./img/YOLO/v1_classification_loss.PNG" width="100%"></center>  
+<img src = "./img/YOLO/v1_classification_loss.PNG" width="70%"></center>  
 - 각 Cell마다 20개의 Class에 대한 Loss 값을 계산  
 - BBox의 개수와 상관없이 각 Cell 별로 한번씩 계산  
 
