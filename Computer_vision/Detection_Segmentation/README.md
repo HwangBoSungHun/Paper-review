@@ -23,7 +23,7 @@ He, K., Gkioxari, G., Dollár, P., & Girshick, R. (2017). Mask r-cnn. In Proceed
 Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once: Unified, real-time object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 779-788).  
 
 ### 개요  
-<img src = "./img/YOLO/v1_summary.PNG" width="50%"></center>  
+<img src = "./img/YOLO/v1_summary.PNG" width="100%"></center>  
 - 이미지를 S by S의 grid cell로 나눈 후, 셀마다 B개의 bounding box와 class probability를 예측  
 - 하나의 neural network에 의해 진행(One-stage detector)  
 - S는 가로, 세로 몇 칸으로 나누는지를 나타내며 7로 설정  
@@ -32,38 +32,37 @@ Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once:
 - C는 각 셀별 class probability를 나타내며 총 20개의 클래스가 존재하기 때문에 C는 20  
 
 ### Architecture  
-<img src = "./img/YOLO/v1_architecture.PNG" width="50%"></center>  
+<img src = "./img/YOLO/v1_architecture.PNG" width="100%"></center>  
 - YOLO는 총 24개의 convolution layer와 2개의 fully connected layer로 구성되어 있으며 convolutional layer 중간 중간에 1 by 1 layer를 두어서 feature 줄임  
 - 최종 output이 7*7*30임을 알 수 있는데, 이는 이미지를 7 by 7의 셀로 나누고, 각각의 셀마다 5가지의 박스 정보를 가지는 박스 2개와, 20개 class probability를 가지고 있기 때문임
 
 ### Training
-<img src = "./img/YOLO/v1_train.PNG" width="60%"></center>  
-- __Pretrain (Classification)__: 전체 24개의 convolutional layer 중 처음 20개의 layer를 ImageNet dataset으로 filter들을 pretrain함
+<img src = "./img/YOLO/v1_train.PNG" width="100%"></center>  
+- <span style="color:red"> __Pretrain (Classification)__ </span>: 전체 24개의 convolutional layer 중 처음 20개의 layer를 ImageNet dataset으로 filter들을 pretrain함
 - __Convert (Detection)__
   - Pretrain된 모델에 4개의 convolution layer와 2개의 fully connected layer를 추가하여 detection 모델을 구축한 뒤 학습을 진행  
   - 데이터는 Pascal voc 2007과 2012를 사용했으며 총 135 epoch동안 학습, Overfitting을 피하기 위해 Dropout과 Data augmentation을 사용  
 
-### Training 
 #### Total loss  
-<img src = "./img/YOLO/v1_total_loss.PNG" width="60%"></center>  
+<img src = "./img/YOLO/v1_total_loss.PNG" width="100%"></center>  
 #### (1) Localization loss
-<img src = "./img/YOLO/v1_localization_loss.PNG" width="60%"></center>  
+<img src = "./img/YOLO/v1_localization_loss.PNG" width="100%"></center>  
 - BBox의 위치에 대한 Loss
 - x, y는 BBox의 좌표, w, h는 가로, 세로 길이(W와 h에 Root를 취한 것은 큰 Box의 작은 편차가 작은 Box의 편차보다 덜 중요하다기 때문)
 - 1<sup>obj</sup>로 box가 존재한다고 예측할 때만 이 Loss를 더해줌
 - 람다를 통해 Localization loss의 가중치를 조절
 #### (2) Confidence loss  
-<img src = "./img/YOLO/v1_confidence_loss.PNG" width="60%"></center>  
+<img src = "./img/YOLO/v1_confidence_loss.PNG" width="100%"></center>  
 - 물체의 존재유무 평가  
 - Confidence loss는 두 부분으로 나눌 수 있는데, 첫번째는 물체가 있다고 예측될 때, 두번째는 물체가 없다고 예측될 때
 - C<sub>i</sub> hat의 경우 YOLO가 예측한 Box confidence score, C<sub>i</sub>는 실제 값. 따라서 C<sub>i</sub>는 실제로 해당 Cell에 물체가 존재하면 1, 존재하지 않으면 0
 - 람다<sub>noobj</sub>는 물체가 없을 때의 효과를 줄여주기 위해 0.5를 곱함(물체가 없는 경우가 상대적으로 더 많기 때문에, 없을 때의 Loss가 많음)
 #### (3) Classification loss  
-<img src = "./img/YOLO/v1_classification_loss.PNG" width="60%"></center>  
+<img src = "./img/YOLO/v1_classification_loss.PNG" width="100%"></center>  
 - 각 Cell마다 20개의 Class에 대한 Loss 값을 계산  
 - BBox의 개수와 상관없이 각 Cell 별로 한번씩 계산  
 ### Non-maximal suppression (NMS)  
-<img src = "./img/YOLO/v1_nms.png" width="60%"></center>  
+<img src = "./img/YOLO/v1_nms.png" width="30%"></center>  
 - YOLO는 Cell마다 두 개의 BBox 예측하기 때문에 7 by 7일 때 98개의 BBox가 생김 &#8594; 겹치는 BBox 많음   
 - NMS는 겹치는 BBox를 제거하는 기법  
 - __제거 과정__
