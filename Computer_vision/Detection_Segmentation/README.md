@@ -128,7 +128,7 @@ Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv prep
 - YOLO v2의 Darknet-19에 ResNet에서 제안된 Skip connection 개념 적용하여 레이어를 많이 쌓음
 
 ### Prediction across scales
-<img src = "./img/YOLO/v3_fpn.jpg" width="100%"></center> 
+<img src = "./img/YOLO/v3_fpn.jpg" width="50%"></center> 
 - Feature Pyramid Network (FPN)과 비슷한 방법으로 3개의 스케일에서 Feature를 추출 &#8594; 해상도가 다른 세가지 스케일의 정보 사용해서 Detection 진행  
 - Low level의 Feature로 이미지의 세세한 객체 정보를 잃지 않음  
 - High level의 Feature로는 큰 객체에 대한 정보 사용할 수 있게 됨  
