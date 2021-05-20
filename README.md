@@ -7,11 +7,11 @@
 ## Paper list
 
 ### Computer vision
-#### Image classification
+#### Image classification [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Computer_vision/Image_classification)
 1. __Squeeze-and-Excitation Networks (SENet)__  
 Hu, J., Shen, L., & Sun, G. (2018). Squeeze-and-excitation networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7132-7141).  
 
-#### Detection & Segmentation
+#### Detection & Segmentation [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Computer_vision/Detection_Segmentation)
 1. __Cascade R-CNN__
 Cai, Z., & Vasconcelos, N. (2019). Cascade R-CNN: high quality object detection and instance segmentation. IEEE transactions on pattern analysis and machine intelligence.
 2. __Mask R-CNN__
@@ -22,7 +22,7 @@ Version 2: Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger.
 Version 3: Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.  
 Version 4: Bochkovskiy, A., Wang, C. Y., & Liao, H. Y. M. (2020). Yolov4: Optimal speed and accuracy of object detection. arXiv preprint arXiv:2004.10934.  
 
-#### Super Resolution
+#### Super Resolution [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Computer_vision/Image_generation)
 1. __SRGAN__(Image)  
 Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ... & Shi, W. (2017). Photo-realistic single image super-resolution using a generative adversarial network. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4681-4690).  
 2. __ESRGAN__(Image)  
