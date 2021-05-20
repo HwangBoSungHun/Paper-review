@@ -106,7 +106,7 @@ Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceed
 ### Fine Grained Features  
 <img src = "./img/YOLO/v2_passthrough.PNG" width="100%"></center>  
 - 작은 Object를 잡아내기 위해서 추가함  
-- 13x13는 큰 Object는 잡아낼 수 있지만 작은 Object는 잡아내기 힘듦 --> 중간의 26x26를 13x13으로 변환한 후 13x13과 결합(__Passthrough layer__)  
+- 13x13는 큰 Object는 잡아낼 수 있지만 작은 Object는 잡아내기 힘듦 &#8594; 중간의 26x26를 13x13으로 변환한 후 13x13과 결합(__Passthrough layer__)  
 
 ### Darknet-19  
 <img src = "./img/YOLO/v2_darknet19.PNG" width="50%"></center>  
@@ -120,6 +120,18 @@ Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceed
 
 ### 3.3. YOLO v3
 Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.  
+- YOLO v3는 v2와 비교해서 Backbone과 FPN이 추가된 점이 다름  
+
+### Darknet-53
+<img src = "./img/YOLO/v3_darknet53.png" width="50%"></center> 
+- YOLO v3는 Backbone으로 Darknet-53을 사용
+- YOLO v2의 Darknet-19에 ResNet에서 제안된 Skip connection 개념 적용하여 레이어를 많이 쌓음
+
+### Prediction across scales
+<img src = "./img/YOLO/v3_fpn.jpg" width="100%"></center> 
+- Feature Pyramid Network (FPN)과 비슷한 방법으로 3개의 스케일에서 Feature를 추출 &#8594; 해상도가 다른 세가지 스케일의 정보 사용해서 Detection 진행  
+- Low level의 Feature로 이미지의 세세한 객체 정보를 잃지 않음  
+- High level의 Feature로는 큰 객체에 대한 정보 사용할 수 있게 됨  
 
 ### 3.4. YOLO v4
 Bochkovskiy, A., Wang, C. Y., & Liao, H. Y. M. (2020). Yolov4: Optimal speed and accuracy of object detection. arXiv preprint arXiv:2004.10934.  
