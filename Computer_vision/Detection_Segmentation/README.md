@@ -69,7 +69,7 @@ Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once:
 <img src = "./img/YOLO/v1_nms.png" width="30%"></center>  
 - YOLO는 Cell마다 두 개의 BBox 예측하기 때문에 7 by 7일 때 98개의 BBox가 생김 &#8594; 겹치는 BBox 많음   
 - NMS는 겹치는 BBox를 제거하는 기법  
-- __제거 과정__
+- __제거 과정__  
   (1) 가장 큰 Box confidence score를 가지는 Box를 선택  
   (2) (1)에서 선택된 Box와 다른 Box 간의 IoU를 계산 &#8594; 특정 threshold(예를 들어 0.5)보다 클 경우 Box 지움   
   (3) 특정 Box의 갯수가 남거나, 선택할 Box가 없을 때까지 (1), (2) 반복  
@@ -86,22 +86,27 @@ Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once:
 
 ### 3.2. YOLO v2
 Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7263-7271).  
-- Problems of YOLO v1  
-  - Significant number of localization errors  
-  - Relatively low recall compared to region proposal-based methods  
-- The goal of YOLO v2: To improving recall and localization while maintaining classification accuracy and accurate detector that is still fast.  
+
+- __YOLO v1의 문제점__ 은 (1) Localization error가 크다는 점, (2) 상대적으로 low recall, 즉 전체 물체 중 찾아내지 못한 것이 있다는 점(각각의 Grid cell이 하나의 Class만 예측 &#8594; 작은 Object 여러 개가 다닥다닥 붙으면 제대로 예측하지 못함)
+- __YOLO v2__ 에서는 속도와 Classification, Detector 정확도는 유지하면서 __Recall과 Localization을 향상__ 을 목표로 함
+  
 
 ### High Resolution Classifier  
 - YOLO v1  
-  1) In YOLO v1, we learn classifier about 224 * 224 images from beginning to end layer, and then detect 448 * 448 images.  
+  1) 처음부터 끝 Layer까지 224x224의 이미지에 대해서 학습시키고나서 448x448 이미지에 대한 Detection을 진행했기 때문에 classifier가 고해상도에 대해서는 학습을 못함
 - YOLO v2  
-  1) YOLO v2 first learned 448 * 448 images (ImageNet) and Darknet-19 classification networks (works well with high resolution images) for 10 epochs.  
-  2) After learning the classification network, remove the last convolution layer of Darknet-19, Avgpool, Softmax and add 4 object detection layers(Started boundary box and object detection learning)  
-  3) YOLO v2 fine tune the resulting network on detection.  
-### Convolutional With Anchor Boxes  
-- YOLO v1 predicts arbitrary boundary boxes. &#8594; In the real-life domain, the boundary boxes are not arbitrary.
-- YOLO v2 predicts offsets to each of the anchor boxes(prior).
+  1) Darknet-19을 classfication network로 사용하여 __ImageNet 데이터(고해상도)__ 를 10 epoch 동안 학습 
+  2) Darknet-19의 마지막 Convolutional layer와 Avgpool, Softmax를 제거하고 Object detection layer 4개 추가  
 
+### Convolutional With Anchor Boxes  
+- YOLO v1는 Cell 별로 임의의 크기를 가지는 BBox 2개 씩 예측 &#8594; 실제 상황에서는 BBox가 임의의 크기를 가지지 않고 특정 크기로 존재  
+- YOLO v2는 임의의 박스를 그리는 것이 아닌 정해진 크기의 박스(Anchor box)에 대해서 Offset을 예측  
+- Cell마다 5개의 Anchor box를 예측하므로 최종 Output이 SxSx(5x(5+20))이 됨(5+20은 Anchor box의 5가지 정보 + 20개의 Class probability)    
+
+### Fine Grained Features  
+<img src = "./img/YOLO/v2_passthrough.PNG" width="100%"></center>  
+- 작은 Object를 잡아내기 위해서 추가함  
+- 13x13는 큰 Object는 잡아낼 수 있지만 작은 Object는 잡아내기 힘듦 --> 중간의 26x26를 13x13으로 변환한 후 13x13과 결합(__Passthrough layer__)  
 ### 3.3. YOLO v3
 Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.  
 ### 3.4. YOLO v4
