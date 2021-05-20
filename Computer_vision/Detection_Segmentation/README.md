@@ -107,7 +107,19 @@ Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceed
 <img src = "./img/YOLO/v2_passthrough.PNG" width="100%"></center>  
 - 작은 Object를 잡아내기 위해서 추가함  
 - 13x13는 큰 Object는 잡아낼 수 있지만 작은 Object는 잡아내기 힘듦 --> 중간의 26x26를 13x13으로 변환한 후 13x13과 결합(__Passthrough layer__)  
+
+### Darknet-19  
+<img src = "./img/YOLO/v2_darknet19.PNG" width="100%"></center>  
+- Backbone으로 19개의 Convolutional layer와 5개의  Maxpooling layer를 사용한 Darknet-19 사용
+- Darknet-19는 Classification을 위해 사용되며 이후에 마지막 layer 부분이 제거되고 Detection 부분 추가됨  
+- VGG-16처럼 작은 Filter를 깊게 쌓아 구성, 3x3 Convolutional layer 사이에 1x1 filter를 배치해서 feature 압축  
+
+### Architecture  
+<img src = "./img/YOLO/v2_architecture.png" width="100%"></center>  
+- 앞쪽의 Darknet-19가 Classification 이며 뒷쪽이 Detection 부분  
+
 ### 3.3. YOLO v3
 Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.  
+
 ### 3.4. YOLO v4
 Bochkovskiy, A., Wang, C. Y., & Liao, H. Y. M. (2020). Yolov4: Optimal speed and accuracy of object detection. arXiv preprint arXiv:2004.10934.  
