@@ -56,7 +56,7 @@ Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once:
 <img src = "./img/YOLO/v1_confidence_loss.png" width="60%"></center>  
 - 물체의 존재유무 평가  
 - confidence loss는 두 부분으로 나눌 수 있는데, 첫번째는 물체가 있다고 예측될 때, 두번째는 물체가 없다고 예측될 때
-- $\hat{C<sub>i</sub>}$ hat의 경우 yolo가 예측한 box confidence score를 나타내며, Ci는 실제의 값입니다. 따라서 Ci는 실제로 해당 cell에 물체가 존재하면 1, 존재하지 않으면 0입니다.
+- $$\hat{C<sub>i</sub>}$$ hat의 경우 yolo가 예측한 box confidence score를 나타내며, Ci는 실제의 값입니다. 따라서 Ci는 실제로 해당 cell에 물체가 존재하면 1, 존재하지 않으면 0입니다.
 (람다noobj)는 물체가 없을 때의 효과를 줄여주기 위해 0.5를 곱해서 계산해줍니다. 물체가 없는 경우가 상대적으로 더 많기 때문에, 없을 때의 loss가 많을 수 밖에 없습니다. 그래서 0.5를 뒷부분에 곱해주게 됩니다.
 
 #### (3) Classification loss  
