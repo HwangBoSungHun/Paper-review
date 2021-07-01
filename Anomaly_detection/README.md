@@ -18,5 +18,5 @@ Ruff, L., Vandermeulen, R., Goernitz, N., Deecke, L., Siddiqui, S. A., Binder, A
 
 ### Anomaly score
 - One-Class Deep SVDD objective로 학습 시켰을 경우 Test 데이터를 식 (5)에 넣어서 양수가 나오면 비정상, 음수가 나오면 정상으로 판단
-- Soft-boundary Deep SVDD objective로 학습 시켰을 경우 식 (5)에서 R_{∗}을 뺀 값을 기준으로 양수가 나오면 비정상, 음수가 나오면 정상으로 판단  
+- Soft-boundary Deep SVDD objective로 학습 시켰을 경우 식 (5)에서 R<sup>∗</sup>을 뺀 값을 기준으로 양수가 나오면 비정상, 음수가 나오면 정상으로 판단  
   <img src = "./img/DeepSVDD/anomaly_score.PNG" width="60%"></center> 
