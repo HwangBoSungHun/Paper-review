@@ -21,9 +21,9 @@ Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021, 
 - 기존 Transformer가 Self-attention 시 O(L<sup>2</sup>) 계산해야 하는 것을 줄이기 위해서 Query 중 일부를 샘플링한 후 M으로 중요한 Query만 뽑아 Self-attention을 구하는 방법  
 - Query 중 U = L<sub>K</sub>lnL<sub>Q</sub>개 샘플링  
 - 샘플링 된 Query에 대해 M bar 구함  
-  <center><img src = "./img/Informer/M.PNG" width="60%"></center>  
+<center><img src = "./img/Informer/M.PNG" width="60%"></center>  
 - M을 기준으로 u = clnL<sub>Q</sub>개만큼의 Query(Q bar) 사용하여 Self-attention 구함  
-  <center><img src = "./img/Informer/ProbSparse.PNG" width="60%"></center>  
+<center><img src = "./img/Informer/ProbSparse.PNG" width="60%"></center>  
 #### Encoder: Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation
 ##### Self-attention Distilling
 <center><img src = "./img/Informer/encoder.PNG" width="100%"></center>  
