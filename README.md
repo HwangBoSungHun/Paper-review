@@ -34,3 +34,6 @@ Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ..
 Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018). Esrgan: Enhanced super-resolution generative adversarial networks. In Proceedings of the European Conference on Computer Vision (ECCV) Workshops (pp. 0-0).  
 3. __iSeeBetter__(Video)  
 Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video super-resolution using recurrent generative back-projection networks. Computational Visual Media, 6(3), 307-317.  
+
+### Anomaly detection
+
