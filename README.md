@@ -37,5 +37,8 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
 
 ### Anomaly detection
 1. __Deep SVDD__  
+Ruff, L., Vandermeulen, R., Goernitz, N., Deecke, L., Siddiqui, S. A., Binder, A., ... & Kloft, M. (2018, July). Deep one-class classification. In International conference on machine learning (pp. 4393-4402). PMLR.  
+
 ### Time series
 1. __Informer__  
+Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021, May). Informer: Beyond efficient transformer for long sequence time-series forecasting. In Proceedings of AAAI.  
