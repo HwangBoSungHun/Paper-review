@@ -3,7 +3,7 @@
 Ruff, L., Vandermeulen, R., Goernitz, N., Deecke, L., Siddiqui, S. A., Binder, A., ... & Kloft, M. (2018, July). Deep one-class classification. In International conference on machine learning (pp. 4393-4402). PMLR.
 ### 개요
 - 정상 데이터를 중심이 c인 Hypersphere에 가까워지도록 데이터를 Mapping &#8594; 비정상 데이터는 Hypersphere 외부에 Mapping됨  
-  <img src = "./img/DeepSVDD/intro.PNG" width="80%"></center>  
+  <img src = "./img/DeepSVDD/intro.PNG" width="100%"></center>  
 
 ### The Deep SVDD Objective  
 #### 1. Soft-boundary Deep SVDD objective
