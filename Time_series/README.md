@@ -1,31 +1,34 @@
-# Paper-review
+# Time series
+## 1. Informer
+Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021, May). Informer: Beyond efficient transformer for long sequence time-series forecasting. In Proceedings of AAAI.
+### 개요
+<img src = "./img/Informer/architecture.PNG" width="100%"></center> 
+- Transformer를 개선하여 Long sequence time-series forecasting (LSTF)에 적합하도록 수정한 모델
+- 기존의 딥러닝 모델(예를 들어 LSTM)을 이용한 시계열 예측의 경우 Sequence가 길어질수록 정확도와 Inference speed가 떨어진다는 문제 존재
+- Transformer도 LSTF에 대해 세 가지 측면에서 한계점 존재  
+  - The Quadratic computation of self-attention  
+    - 1개의 layer에 대해 Self-attention의 계산량은 __O(L<sup>2</sup>)__  
+    - __ProbSparse self-attention__ 으로 문제 해결  
+  - The memory bottleneck in stacking layers for long inputs 
+    - J개의 layer에 대해 계산량은 __O(J*L<sup>2</sup>)__  
+    - __Self-attention distilling operation__ 으로 문제 해결
+  - The speed plunge in predicting long outputs  
+    - Inference 시 Decoder에서 Dynamic decoding 방식으로 예측(k번째 예측을 다시 input으로 넣어서 k+1번째 예측)하던 것을 수정하여 one forward step으로 바꿔서 문제 해결
 
-~~매주 토요일 한 편의~~ 틈틈이 논문 리뷰하겠습니다.
+### Methodology
+#### Efficient Self-attention Mechanism
+##### ProbSparse Self-attention
+- 기존 Transformer가 Self-attention 시 O(L<sup>2</sup>) 계산해야 하는 것을 줄이기 위해서 Query 중 일부를 샘플링한 후 M으로 중요한 Query만 뽑아 Self-attention을 구하는 방법
+- Query 중 U = L<sub>K</sub>lnL<sub>Q</sub>개 샘플링
+- 샘플링 된 Query에 대해 M bar 구함
+  <img src = "./img/Informer/M.PNG" width="100%"></center> 
+- M을 기준으로 u = clnL<sub>Q</sub>개만큼의 Query(Q bar) 사용하여 Self-attention 구함
+  <img src = "./img/Informer/ProbSparse.PNG" width="100%"></center> 
+#### Encoder: Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation
+##### Self-attention Distilling
+- Soft-boundary Deep SVDD objective의 심플한 버전
+- 반지름 R에 대한 것을 없애고 Mapping된 데이터가 최대한 c와 가까워지도록 학습
+  <img src = "./img/Informer/encoder.PNG" width="100%"></center> 
 
-첫 결심한 날은 2021년 3월 24일인데 열심히 해보겠습니다.
-
-## Paper list
-
-### Computer vision
-#### Image classification [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Computer_vision/Image_classification)
-1. __Squeeze-and-Excitation Networks (SENet)__  
-Hu, J., Shen, L., & Sun, G. (2018). Squeeze-and-excitation networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7132-7141).  
-
-#### Detection & Segmentation [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Computer_vision/Detection_Segmentation)
-1. __Cascade R-CNN__
-Cai, Z., & Vasconcelos, N. (2019). Cascade R-CNN: high quality object detection and instance segmentation. IEEE transactions on pattern analysis and machine intelligence.
-2. __Mask R-CNN__
-He, K., Gkioxari, G., Dollár, P., & Girshick, R. (2017). Mask r-cnn. In Proceedings of the IEEE international conference on computer vision (pp. 2961-2969).
-3. __YOLO__(v1, v2, v3, v4)    
-Version 1: Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once: Unified, real-time object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 779-788).  
-Version 2: Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7263-7271).  
-Version 3: Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.  
-Version 4: Bochkovskiy, A., Wang, C. Y., & Liao, H. Y. M. (2020). Yolov4: Optimal speed and accuracy of object detection. arXiv preprint arXiv:2004.10934.  
-
-#### Super Resolution [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Computer_vision/Image_generation)
-1. __SRGAN__(Image)  
-Ledig, C., Theis, L., Huszár, F., Caballero, J., Cunningham, A., Acosta, A., ... & Shi, W. (2017). Photo-realistic single image super-resolution using a generative adversarial network. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4681-4690).  
-2. __ESRGAN__(Image)  
-Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018). Esrgan: Enhanced super-resolution generative adversarial networks. In Proceedings of the European Conference on Computer Vision (ECCV) Workshops (pp. 0-0).  
-3. __iSeeBetter__(Video)  
-Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video super-resolution using recurrent generative back-projection networks. Computational Visual Media, 6(3), 307-317.  
+#### Decoder: Generating Long Sequential Outputs Through One Forward Procedure
+- One-
