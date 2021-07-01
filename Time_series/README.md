@@ -45,8 +45,8 @@ Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021, 
 - Inputs으로 바로 X<sub>0</sub>에 해당하는 부분의 값 예측
 
 ### 실험 결과
-<center><img src = "./img/Informer/result1.PNG" width="100%"></center>  
+<center><img src = "./img/Informer/result1.PNG" width="80%"></center>  
 <center><img src = "./img/Informer/result2.PNG" width="100%"></center>  
 
 ### 계산량 비교
-<center><img src = "./img/Informer/computation.PNG" width="100%"></center>  
+<center><img src = "./img/Informer/computation.PNG" width="60%"></center>  
