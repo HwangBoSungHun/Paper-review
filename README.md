@@ -35,10 +35,10 @@ Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., ... & Change Loy, C. (2018)
 3. __iSeeBetter__(Video)  
 Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video super-resolution using recurrent generative back-projection networks. Computational Visual Media, 6(3), 307-317.  
 
-### Anomaly detection
+### Anomaly detection [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Anomaly_detection)
 1. __Deep SVDD__  
 Ruff, L., Vandermeulen, R., Goernitz, N., Deecke, L., Siddiqui, S. A., Binder, A., ... & Kloft, M. (2018, July). Deep one-class classification. In International conference on machine learning (pp. 4393-4402). PMLR.  
 
-### Time series
+### Time series [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Time_series)
 1. __Informer__  
 Zhou, H., Zhang, S., Peng, J., Zhang, S., Li, J., Xiong, H., & Zhang, W. (2021, May). Informer: Beyond efficient transformer for long sequence time-series forecasting. In Proceedings of AAAI.  
