@@ -135,3 +135,35 @@ Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv prep
 
 ### 3.4. YOLO v4
 Bochkovskiy, A., Wang, C. Y., & Liao, H. Y. M. (2020). Yolov4: Optimal speed and accuracy of object detection. arXiv preprint arXiv:2004.10934.  
+
+## 4. SORT
+Bewley, A., Ge, Z., Ott, L., Ramos, F., & Upcroft, B. (2016, September). Simple online and realtime tracking. In 2016 IEEE international conference on image processing (ICIP) (pp. 3464-3468). IEEE.
+
+### 개요
+- Detection 모델의 결과(Bounding box)를 사용해서 객체를 추적하는 알고리즘
+
+### Methodology
+
+#### Detection
+- Faster RCNN을 사용해서 각 프레임에서 객체의 Bounding box 및 class 구함
+
+#### Estimation Model
+- Kalman filter로 현재 시점(t)에서 구한 Bounding box 정보를 통해 다음 시점(t+1)의 Bounding box 정보 예측
+
+#### Data Association
+- t시점에서 예측한 t+1 시점의 Bounding box와 t+1 시점에서의 실제 Bounding box와의 IoU를 구한 후 Hungarian algorithm으로 Bounding box 매칭
+
+#### Creation and Deletion of Track Identities
+- 현재 detect된 객체가 이전 target들과 겹치지 않으면 Creation
+- T<sub>Lost</sub> 프레임 동안 객체가 detect 되지 않으면 Deletion
+
+## 5. DeepSORT
+Wojke, N., Bewley, A., & Paulus, D. (2017, September). Simple online and realtime tracking with a deep association metric. In 2017 IEEE international conference on image processing (ICIP) (pp. 3645-3649). IEEE.
+
+### 개요
+(SORT와 거의 비슷하기 때문에 간단히 정리)
+- SORT에 Bounding box의 이미지 정보(feature)를 추가한 기법
+- BBox의 이미지를 CNN에 넣어서 feature를 뽑은 후 해당 feature와 이전에 tracking된 feature를 cosine distance로 비교하는 작업이 추가됨
+
+## 6. SORT_OH
+Nasseri, M. H., Moradi, H., Hosseini, R., & Babaee, M. (2021). Simple online and real-time tracking with occlusion handling. arXiv preprint arXiv:2103.04147.
