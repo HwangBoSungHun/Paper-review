@@ -65,10 +65,41 @@ Zong, B., Song, Q., Min, M. R., Cheng, W., Lumezanu, C., Cho, D., & Chen, H. (20
 #### 4. Objective function  
   <img src = "./img/DAGMM/objective_function.PNG" width="100%"></center>  
 - L(xi, xi’): reconstruction error(Compression network)
-- E(zi): 학습은 정상 데이터에 대해서만 이루어지므로 E(z)가 작아지도록 학습→ anomaly에 대해서는 E(z)가 커짐\
+- E(zi): 학습은 정상 데이터에 대해서만 이루어지므로 E(z)가 작아지도록 학습→ anomaly에 대해서는 E(z)가 커짐
 - P: Sigularity problem(trivial solution) 해결하려고 추가함
-
-
 
 ## 4. GDN(Time series)
 Deng, A., & Hooi, B. (2021, February). Graph neural network-based anomaly detection in multivariate time series. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 35, No. 5, pp. 4027-4035).  
+### 개요
+- structure learning approach 방식과 graph neural network를 결합하고 추가로 attention weight를 사용하여 감지된 이상치에 대한 설명 가능성을 제공
+- 변수 간의 관계 구조를 Graph 형태로 학습하여 시계열 예측에 사용
+### Proposed Framework
+#### 1. Problem Statement
+  <img src = "./img/GDN/data_dim.PNG" width="100%"></center> 
+- N개의 센서, 전체 길이(시간)는 T_train
+- t 시점에서 s^(t)는 N차원
+- train 데이터는 모두 정상으로 이루어짐
+- test 데이터(s_test)는 정상/비정상을 a(t) =0/1로 label됨
+#### 2. Overview
+  <img src = "./img/GDN/architecture.PNG" width="100%"></center> 
+#### 3. Sensor embedding
+  <img src = "./img/GDN/sensor_embedding.PNG" width="100%"></center> 
+- N개의 센서 각각에 대해 d차원으로 embedding
+- (1) Structure learning에 사용됨(어떤 센서가 서로 연관되어 있는지)
+- (2) Attention mechanism에 사용됨
+#### 4. Graph structure learning
+- 센서 간의 관계를 graph structure로 표현
+- node는 센서, edge는 dependency relationships를 나타냄
+- 한 센서에서 다른 센서로의 edge는 첫 번째 센서가 두 번째 센서의 동작을 모델링하는 데 사용됨을 나타냄
+- Directed graph(방향이 있는 그래프) 형태(dependency 를 표현하기 위해)
+- adjacency matrix A (Aij가 있다는 것은node i에서 node j edge가 있다는 것)
+- vi, vj를 가지고 센서 간의 similarity eji 구함 → 만약 Top k(사람이 설정) 안에 j가 들어 있다면 Aji = 1(연관성이 상위 k개 안에 들면 1) 
+#### 5. Graph attention-based forecasting
+- input 데이터는 N개의 센서에 대해 w개의 시점 씩 sliding
+  <img src = "./img/GDN/data_dim2.PNG" width="100%"></center> 
+- (Feature extractor) 결과적으로 xi를 zi로 만들어줌. 이때 Sensor embedding vi와 데이터 xi를 이용해서 attention a(알파)를 구해서 사용하며 N(i) = {j | Aji > 0}이기 때문에 i와 관련된 j에 대해서만 zi를 구함
+  <img src = "./img/GDN/feature_extraction.PNG" width="100%"></center> 
+- (Output layer) f_세타 함수는 일반적인 FC 모델로 (t-w)에서 (t-1) 시점의 데이터 x^(t)로부터 만들어진 z^(t)를 입력으로 받아서 그 다음 시점인 (t) 시점의 값을 예측. Loss는 MSE 사용
+  <img src = "./img/GDN/output_layer.PNG" width="100%"></center> 
+#### 6. Graph deviation scoring
+  <img src = "./img/GDN/scoring.PNG" width="100%"></center> 
