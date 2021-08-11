@@ -38,6 +38,12 @@ Chadha, A., Britto, J., & Roja, M. M. (2020). iSeeBetter: Spatio-temporal video 
 ### Anomaly detection [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Anomaly_detection)
 1. __Deep SVDD__  
 Ruff, L., Vandermeulen, R., Goernitz, N., Deecke, L., Siddiqui, S. A., Binder, A., ... & Kloft, M. (2018, July). Deep one-class classification. In International conference on machine learning (pp. 4393-4402). PMLR.  
+2. __MAD-GAN__(Time series)  
+Li, D., Chen, D., Jin, B., Shi, L., Goh, J., & Ng, S. K. (2019, September). MAD-GAN: Multivariate anomaly detection for time series data with generative adversarial networks. In International Conference on Artificial Neural Networks (pp. 703-716). Springer, Cham.  
+3. __DAGMM__(Time series)  
+Zong, B., Song, Q., Min, M. R., Cheng, W., Lumezanu, C., Cho, D., & Chen, H. (2018, February). Deep autoencoding gaussian mixture model for unsupervised anomaly detection. In International conference on learning representations.  
+4. __GDN__(Time series)  
+Deng, A., & Hooi, B. (2021, February). Graph neural network-based anomaly detection in multivariate time series. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 35, No. 5, pp. 4027-4035).  
 
 ### Time series [link](https://github.com/HwangBoSungHun/Paper-review/tree/main/Time_series)
 1. __Informer__  
