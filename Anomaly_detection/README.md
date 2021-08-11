@@ -75,7 +75,7 @@ Deng, A., & Hooi, B. (2021, February). Graph neural network-based anomaly detect
 - 변수 간의 관계 구조를 Graph 형태로 학습하여 시계열 예측에 사용
 ### Proposed Framework
 #### 1. Problem Statement
-  <img src = "./img/GDN/data_dim.PNG" width="100%"></center> 
+  <img src = "./img/GDN/data_dim.PNG" width="50%"></center> 
 - N개의 센서, 전체 길이(시간)는 T_train
 - t 시점에서 s^(t)는 N차원
 - train 데이터는 모두 정상으로 이루어짐
@@ -83,7 +83,7 @@ Deng, A., & Hooi, B. (2021, February). Graph neural network-based anomaly detect
 #### 2. Overview
   <img src = "./img/GDN/architecture.PNG" width="100%"></center> 
 #### 3. Sensor embedding
-  <img src = "./img/GDN/sensor_embedding.PNG" width="100%"></center> 
+  <img src = "./img/GDN/sensor_embedding.PNG" width="50%"></center> 
 - N개의 센서 각각에 대해 d차원으로 embedding
 - (1) Structure learning에 사용됨(어떤 센서가 서로 연관되어 있는지)
 - (2) Attention mechanism에 사용됨
@@ -96,10 +96,10 @@ Deng, A., & Hooi, B. (2021, February). Graph neural network-based anomaly detect
 - vi, vj를 가지고 센서 간의 similarity eji 구함 → 만약 Top k(사람이 설정) 안에 j가 들어 있다면 Aji = 1(연관성이 상위 k개 안에 들면 1) 
 #### 5. Graph attention-based forecasting
 - input 데이터는 N개의 센서에 대해 w개의 시점 씩 sliding
-  <img src = "./img/GDN/data_dim2.PNG" width="100%"></center> 
+  <img src = "./img/GDN/data_dim2.PNG" width="60%"></center> 
 - (Feature extractor) 결과적으로 xi를 zi로 만들어줌. 이때 Sensor embedding vi와 데이터 xi를 이용해서 attention a(알파)를 구해서 사용하며 N(i) = {j | Aji > 0}이기 때문에 i와 관련된 j에 대해서만 zi를 구함
-  <img src = "./img/GDN/feature_extraction.PNG" width="100%"></center> 
+  <img src = "./img/GDN/feature_extraction.PNG" width="60%"></center> 
 - (Output layer) f_세타 함수는 일반적인 FC 모델로 (t-w)에서 (t-1) 시점의 데이터 x^(t)로부터 만들어진 z^(t)를 입력으로 받아서 그 다음 시점인 (t) 시점의 값을 예측. Loss는 MSE 사용
-  <img src = "./img/GDN/output_layer.PNG" width="100%"></center> 
+  <img src = "./img/GDN/output_layer.PNG" width="60%"></center> 
 #### 6. Graph deviation scoring
-  <img src = "./img/GDN/scoring.PNG" width="100%"></center> 
+  <img src = "./img/GDN/scoring.PNG" width="20%"></center> 
