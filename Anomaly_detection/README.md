@@ -38,6 +38,37 @@ Li, D., Chen, D., Jin, B., Shi, L., Goh, J., & Ng, S. K. (2019, September). MAD-
 
 ## 3. DAGMM(Time series)
 Zong, B., Song, Q., Min, M. R., Cheng, W., Lumezanu, C., Cho, D., & Chen, H. (2018, February). Deep autoencoding gaussian mixture model for unsupervised anomaly detection. In International conference on learning representations.  
+### 개요
+- DAGMM은 deep autoencoder를 활용하여 각 입력 데이터 포인트에 대한 저차원 표현 및 reconstruction error를 생성하며, 이는 GMM(가우시안 혼합 모델)에 제공됨  
+- DAGMM은 분리된(decoupled) two-stage training과 standard EM(Expectation-Maximization) 알고리즘을 사용하는 대신, mixture model의 매개변수 학습을 용이하게 하기 위해 별도의 Estimation network를 활용하여 deep autoencoder와 mixture model의 매개변수를 end-to-end 방식으로 동시에 최적화  
+### Introduction
+#### 장점 1
+- (Compression network에서)DAGMM은 아래 그림처럼 두 가지 정보(reduced dimension, reconstruction error)를 사용하기 때문에 중요 정보가 보존됨
+  <img src = "./img/DAGMM/intro.PNG" width="100%"></center>  
+#### 장점 2
+- Compression network에서 나온 low-dimensional space에 대해 GMM(Gaussian Mixture Model) 적용
+- end-to-end로 학습시키려고 Estimation network를 만들고 그 결과를 이용해서 energy를 구함
+- Compression network의 reconstruction error와 Estimation network의 energy가 최소가 되도록 모델 학습 → 차원 축소와 밀도 추정이 동시에 학습됨  
+#### 장점 3
+- 이전의 Autoencoder는 end-to-end 학습이 어려워서 pre-training 과정이 필요했는데 본 연구에서는 Estimation network에 대해 regularization을 추가하여 Compression network가 local optima에서 탈출하는데 크게 도움이 되기 때문에 end-to-end 학습이 잘 됨
+### DEEP AUTOENCODING GAUSSIAN MIXTURE MODE
+#### 1. Overview  
+  <img src = "./img/DAGMM/architecture.PNG" width="100%"></center>  
+#### 2. Compression network
+- z_c는 일반적인 autoencoder의 latent vector이고 z_r은 z_c로부터 생성된 x’와 x의 reconstruction error(본 논문에서는 Euclidean distance, cosine similarity 등을 사용할 수 있다고 나와있음)  
+#### 3. Estimation network  
+  <img src = "./img/DAGMM/estimation_network.PNG" width="100%"></center>  
+- (GMM 설명 블로그 참고: https://untitledtblog.tistory.com/133)
+- 학습된 GMM 매개변수를 사용하여 테스트 단계에서 sample 에너지를 추정하고 사전 선택된 threshold로 high energy 샘플을 이상치로 예측
+- Compression network의 output인 z를 받아서 MLN(Multi-Layer Neural network) 지남 → 감마햇 = softmax(p) (batch size는 N이고 총 K개(사람이 설정해줌)의 그룹에 대한 분류) → 감마햇으로 N개의 샘플(batch)에 대해서 component k에 대한 확률, 평균, covariance를 구함
+- (6)번 식은 (아마도) 마이너스 log likelihood인데 이를 최소화 시키면 likelihood가 최대화 되니깐 정상 데이터에 대한 밀도 추정이 잘 됨
+#### 4. Objective function  
+  <img src = "./img/DAGMM/objective_function.PNG" width="100%"></center>  
+- L(xi, xi’): reconstruction error(Compression network)
+- E(zi): 학습은 정상 데이터에 대해서만 이루어지므로 E(z)가 작아지도록 학습→ anomaly에 대해서는 E(z)가 커짐\
+- P: Sigularity problem(trivial solution) 해결하려고 추가함
+
+
 
 ## 4. GDN(Time series)
 Deng, A., & Hooi, B. (2021, February). Graph neural network-based anomaly detection in multivariate time series. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 35, No. 5, pp. 4027-4035).  
